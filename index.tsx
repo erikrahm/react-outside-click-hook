@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 import isElement from "lodash.iselement";
 
-type Props = {
-  element: React.MutableRefObject<null | HTMLDivElement>;
-  onOutsideClick: (isInside: boolean) => void;
-  active: boolean;
-};
-
-const useOutsideClick = ({ element, onOutsideClick, active }: Props) => {
+const useOutsideClick = (
+  element: React.MutableRefObject<null | HTMLDivElement>,
+  onOutsideClick: (isInside: boolean) => void,
+  active: boolean = true
+) => {
   if (active) {
     const onMouseUp = (e: MouseEvent) => {
       const isInside =

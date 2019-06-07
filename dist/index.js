@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var lodash_iselement_1 = __importDefault(require("lodash.iselement"));
-var useOutsideClick = function (_a) {
-    var element = _a.element, onOutsideClick = _a.onOutsideClick, active = _a.active;
+var useOutsideClick = function (element, onOutsideClick, active) {
+    if (active === void 0) { active = true; }
     if (active) {
         var onMouseUp_1 = function (e) {
             var isInside = element.current && lodash_iselement_1.default(element.current)
