@@ -3,7 +3,11 @@
   "version": "1.0.1",
   "type": "git",
   "description": "A React hook that handles clicks outside of a given element and calls a provided function.",
-  "url": "https://github.com/erikrahm/react-outside-click-hook",
+  "url": "https://github.com/erikrahm/react-outside-click-hook.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erikrahm/react-outside-click-hook.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
