@@ -13,9 +13,7 @@ const useOutsideClick = ({ element, onOutsideClick, active }: Props) => {
       element.current && isElement(element.current)
         ? element.current.contains(e.target as HTMLDocument)
         : false;
-    if (!isInside) {
-      onOutsideClick(isInside);
-    }
+    onOutsideClick(isInside);
   };
 
   useEffect(() => {

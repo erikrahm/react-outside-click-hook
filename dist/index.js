@@ -11,9 +11,7 @@ var useOutsideClick = function (_a) {
         var isInside = element.current && lodash_iselement_1.default(element.current)
             ? element.current.contains(e.target)
             : false;
-        if (!isInside) {
-            onOutsideClick(isInside);
-        }
+        onOutsideClick(isInside);
     };
     react_1.useEffect(function () {
         document.addEventListener("mouseup", onMouseUp);
