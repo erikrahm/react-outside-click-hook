@@ -1,4 +1,4 @@
-import React from "react";
+/// <reference types="react" />
 declare type Props = {
     element: React.MutableRefObject<null | HTMLDivElement>;
     onOutsideClick: (isInside: boolean) => void;
