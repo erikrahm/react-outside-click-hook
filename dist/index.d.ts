@@ -4,5 +4,5 @@ declare type Props = {
     onOutsideClick: (isInside: boolean) => void;
     disabled: boolean;
 };
-export declare const useOutsideClick: ({ element, onOutsideClick, disabled }: Props) => void;
-export {};
+declare const useOutsideClick: ({ element, onOutsideClick, disabled }: Props) => void;
+export default useOutsideClick;

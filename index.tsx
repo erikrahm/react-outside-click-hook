@@ -7,11 +7,7 @@ type Props = {
   disabled: boolean;
 };
 
-export const useOutsideClick = ({
-  element,
-  onOutsideClick,
-  disabled
-}: Props) => {
+const useOutsideClick = ({ element, onOutsideClick, disabled }: Props) => {
   const onMouseUp = (e: MouseEvent) => {
     const isInside =
       element.current && isElement(element.current)
@@ -29,3 +25,5 @@ export const useOutsideClick = ({
     };
   }, [disabled]);
 };
+
+export default useOutsideClick;
