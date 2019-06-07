@@ -11,7 +11,7 @@ A React hook that handles clicks outside of a given element and calls a provided
 
 # Usage
 
-### Props
+### Arguments
 - element: This accepts a React ref to a DOM element
 - onOutsideClick: Accepts a callback function that will be called on click outside of the bounds of the element provided
 - active: This accepts a boolean that tells the hook wether to be listening for clicks or not, ture is actively listening for clicks, false is inactive/disabled
