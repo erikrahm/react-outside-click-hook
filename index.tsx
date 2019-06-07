@@ -4,10 +4,10 @@ import isElement from "lodash.iselement";
 type Props = {
   element: React.MutableRefObject<null | HTMLDivElement>;
   onOutsideClick: (isInside: boolean) => void;
-  disabled: boolean;
+  active: boolean;
 };
 
-const useOutsideClick = ({ element, onOutsideClick, disabled }: Props) => {
+const useOutsideClick = ({ element, onOutsideClick, active }: Props) => {
   const onMouseUp = (e: MouseEvent) => {
     const isInside =
       element.current && isElement(element.current)
@@ -23,7 +23,7 @@ const useOutsideClick = ({ element, onOutsideClick, disabled }: Props) => {
     return () => {
       document.removeEventListener("mouseup", onMouseUp);
     };
-  }, [disabled]);
+  }, [!active]);
 };
 
 export default useOutsideClick;

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var lodash_iselement_1 = __importDefault(require("lodash.iselement"));
 var useOutsideClick = function (_a) {
-    var element = _a.element, onOutsideClick = _a.onOutsideClick, disabled = _a.disabled;
+    var element = _a.element, onOutsideClick = _a.onOutsideClick, active = _a.active;
     var onMouseUp = function (e) {
         var isInside = element.current && lodash_iselement_1.default(element.current)
             ? element.current.contains(e.target)
@@ -20,6 +20,6 @@ var useOutsideClick = function (_a) {
         return function () {
             document.removeEventListener("mouseup", onMouseUp);
         };
-    }, [disabled]);
+    }, [!active]);
 };
 exports.default = useOutsideClick;
