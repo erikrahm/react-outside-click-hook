@@ -17,8 +17,8 @@ A React hook that handles clicks outside of a given element and calls a provided
 - active: This accepts a boolean that tells the hook wether to be listening for clicks or not, ture is actively listening for clicks, false is inactive/disabled
 
 ### Modal Example (typescript)
-    import  React,  {  useState,  useRef,  RefObject  }
-    import useOutsideClick from "react-outside-click-handler"
+    import  React,  {  useState,  useRef,  RefObject  } form "React";
+    import useOutsideClick from "react-outside-click-handler";
     
     const  [show,  updateShow]  =  useState(false); // Modal open/close state
     const  modalContainer:  RefObject<HTMLDivElement>  =  useRef(null); // React ref to be applied to the container element
@@ -30,8 +30,8 @@ A React hook that handles clicks outside of a given element and calls a provided
     });
 
 ### Modal Example (javascript)
-    import  React,  {  useState,  useRef  }
-    import useOutsideClick from "react-outside-click-handler"
+    import  React,  {  useState,  useRef  } from "React";
+    import useOutsideClick from "react-outside-click-handler";
     
     const  [show,  updateShow]  =  useState(false); // Modal open/close state
     const  modalContainer =  useRef(null); // React ref to be applied to the container element
