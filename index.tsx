@@ -8,20 +8,22 @@ type Props = {
 };
 
 const useOutsideClick = ({ element, onOutsideClick, active }: Props) => {
-  const onMouseUp = (e: MouseEvent) => {
-    const isInside =
-      element.current && isElement(element.current)
-        ? element.current.contains(e.target as HTMLDocument)
-        : false;
-    onOutsideClick(isInside);
-  };
-
-  useEffect(() => {
-    document.addEventListener("mouseup", onMouseUp);
-    return () => {
-      document.removeEventListener("mouseup", onMouseUp);
+  if (active) {
+    const onMouseUp = (e: MouseEvent) => {
+      const isInside =
+        element.current && isElement(element.current)
+          ? element.current.contains(e.target as HTMLDocument)
+          : false;
+      onOutsideClick(isInside);
     };
-  }, [!active]);
+
+    useEffect(() => {
+      document.addEventListener("mouseup", onMouseUp);
+      return () => {
+        document.removeEventListener("mouseup", onMouseUp);
+      };
+    }, [active]);
+  }
 };
 
 export default useOutsideClick;
