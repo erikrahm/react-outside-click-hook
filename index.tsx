@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, RefObject } from "react";
 import isElement from "lodash.isElement";
 
 const useOutsideClick = (
   inside:
-    | React.MutableRefObject<null | HTMLDivElement>
-    | [React.MutableRefObject<null | HTMLDivElement>],
+    | RefObject<null | HTMLDivElement>
+    | Array<RefObject<null | HTMLDivElement>>,
   onOutsideClick: (isInside: boolean) => void,
   active: boolean = true
 ) => {
