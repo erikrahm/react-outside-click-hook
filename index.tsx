@@ -1,5 +1,5 @@
 import { useEffect, RefObject } from "react";
-import isElement from "lodash.isElement";
+import isElement from "lodash.iselement";
 
 const useOutsideClick = (
   inside:
