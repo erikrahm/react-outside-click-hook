@@ -28,23 +28,24 @@ Structure:
 
     const  [show,  updateShow]  =  useState(false); // Modal open/close state
     const  modalContainer:  RefObject<HTMLDivElement>  =  useRef(null); // React ref to be applied to the container element
-
+    
     useOutsideClick(
       modalContainer, // Ref to the container element (this can be an array of refs for multiple "inside" elements)
       updateShow, // Callback function to be called on outside click
       show // When to disable the outside click handler, ie. when the modal is closed.
     );
 
-### Modal Example (javascript)
+### Dropdown Example (javascript)
 
     import  React,  {  useState,  useRef  } from "react";
     import useOutsideClick from "react-outside-click-hook";
 
     const  [show,  updateShow]  =  useState(false); // Modal open/close state
-    const  modalContainer =  useRef(null); // React ref to be applied to the container element
+    const  dropdownContainer =  useRef(null); // React ref to be applied to the container element
+    const  dropdownButton =  useRef(null); // React ref to be applied to the container element
 
     useOutsideClick(
-      modalContainer, // Ref to the container element (this can be an array of refs for multiple "inside" elements)
+      [dropdownContainer, dropdownButton], // Ref to the container element (this can be an array of refs for multiple "inside" elements)
       updateShow, // Callback function to be called on outside click
       show // When to disable the outside click handler, ie. when the modal is closed.
     );
