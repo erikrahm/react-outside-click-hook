@@ -7,9 +7,6 @@ A React hook that handles clicks outside of a given element and calls a provided
     // Install the package
     npm install react-outside-click-hook
 
-    // Install Typescript Types
-    npm install --save-dev @types/react-outside-click-hook
-
 # Usage
 
 ### Arguments
