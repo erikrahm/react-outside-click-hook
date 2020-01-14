@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import { useCallback, useEffect, RefObject } from "react";
 import isElement from "lodash.iselement";
 
 const useOutsideClick = (
@@ -8,7 +8,7 @@ const useOutsideClick = (
   onOutsideClick: (isInside: boolean) => void,
   active: boolean = true
 ) => {
-  const onMouseUp = (e: MouseEvent) => {
+  const onMouseUp = useCallback((e: MouseEvent) => {
     const isInside = Array.isArray(inside)
       ? inside.some(
           element =>
@@ -23,7 +23,7 @@ const useOutsideClick = (
         inside.current.contains(e.target as HTMLDocument);
 
     onOutsideClick(isInside);
-  };
+  }, [onOutsideClick, inside]);
 
   useEffect(() => {
     if (active) {
@@ -32,7 +32,7 @@ const useOutsideClick = (
         document.removeEventListener("mouseup", onMouseUp);
       };
     }
-  }, [active]);
+  }, [active, onMouseUp]);
 };
 
 export default useOutsideClick;
